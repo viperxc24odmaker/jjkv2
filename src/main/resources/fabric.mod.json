@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "jjk",
+  "version": "1.0.0",
+  "name": "JJK: Cursed Energy",
+  "description": "Cursed energy, cursed techniques and domain expansions. A MakeForge / PixelForge joint.",
+  "authors": [ "Divine (MakeForge)" ],
+  "contact": {},
+  "license": "ARR",
+  "environment": "*",
+  "entrypoints": {
+    "main": [ "com.makeforge.jjk.JJKMod" ],
+    "client": [ "com.makeforge.jjk.client.JJKClient" ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
