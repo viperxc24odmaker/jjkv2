@@ -15,6 +15,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class JJKMod implements ModInitializer {
 
         ServerPlayNetworking.registerGlobalReceiver(AbilityPayload.TYPE, (payload, context) -> {
             ServerPlayer player = context.player();
-            player.serverLevel().getServer().execute(() -> TechniqueAbilities.execute(player, payload.slot()));
+            ((ServerLevel) player.level()).getServer().execute(() -> TechniqueAbilities.execute(player, payload.slot()));
         });
 
         // CE regen + run scheduled tasks each server tick
